@@ -1,0 +1,4 @@
+pygame==2.6.1
+shapely>=2.0.1
+pandas>=2.0
+numpy>=1.25

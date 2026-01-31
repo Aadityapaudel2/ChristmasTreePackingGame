@@ -45,8 +45,7 @@ SUBMISSION_MAX_N = 200
 SUBMISSION_DECIMALS = 6
 VERSION_TAG = "v10"
 OUTPUT_DIR_NAME = "game_v10"
-REPO_ROOT = Path(__file__).resolve().parent
-LOAD_MASTER_PATH = REPO_ROOT / "comparison" / "submitted1.csv"
+LOAD_MASTER_PATH = r"n:\kAGGLE\comparison\submitted1.csv"
 
 
 def format_submission_value(value):
