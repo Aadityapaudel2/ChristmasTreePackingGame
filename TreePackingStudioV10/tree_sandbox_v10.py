@@ -2500,23 +2500,16 @@ class TreeSandboxApp:
                         self.selecting = True
                         self.sel_start = self.screen_to_world(mx, my)
                         self.sel_end = self.sel_start
-                elif event.button == 4:
+                elif event.button in (4, 5):
                     mods = pygame.key.get_mods()
-                    step = 3.0
-                    if mods & pygame.KMOD_SHIFT:
-                        step = 1.0
+                    direction = 1 if event.button == 4 else -1
                     if mods & pygame.KMOD_CTRL:
-                        self.zoom_at(*event.pos, self.zoom_factor)
+                        factor = self.zoom_factor if direction > 0 else 1.0 / self.zoom_factor
+                        self.zoom_at(*event.pos, factor)
                     else:
-                        self.rotate_selected(step)
-                elif event.button == 5:
-                    mods = pygame.key.get_mods()
-                    step = -3.0
-                    if mods & pygame.KMOD_SHIFT:
-                        step = -1.0
-                    if mods & pygame.KMOD_CTRL:
-                        self.zoom_at(*event.pos, 1.0 / self.zoom_factor)
-                    else:
+                        step = 3.0 * direction
+                        if mods & pygame.KMOD_SHIFT:
+                            step = 1.0 * direction
                         self.rotate_selected(step)
 
             if event.type == pygame.MOUSEWHEEL:
