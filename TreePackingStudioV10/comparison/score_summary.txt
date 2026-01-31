@@ -1,0 +1,41 @@
+We maximize $\sum_{i=1}^{1997}x_i^{12}$ subject to $-\frac{1}{\sqrt3}\le x_i\le\sqrt3$ and $\sum x_i=-318\sqrt3$.
+
+Claim: At a maximizer, all but at most one of the $x_i$ lie in $\left\{-\frac{1}{\sqrt3},\sqrt3\right\}$.
+
+Proof: Suppose two distinct indices $i\ne j$ satisfy $x_i,x_j\in\left(-\frac{1}{\sqrt3},\sqrt3\right)$. For small $\varepsilon>0$ with $x_i\pm\varepsilon,x_j\mp\varepsilon$ still in the interval, the sum constraint is preserved. Since $\phi(x)=x^{12}$ is convex on $\mathbb R$, the function
+$$
+\varepsilon\mapsto \phi(x_i+\varepsilon)+\phi(x_j-\varepsilon)
+$$
+is convex, hence attains its maximum over a symmetric interval at an endpoint, so for some choice of sign the value increases when $|\varepsilon|$ is increased until one of $x_i,x_j$ hits an endpoint. Repeating eliminates all but possibly one interior variable.
+
+Thus we may assume $1996$ variables are at endpoints and one variable equals $y\in\left[-\frac{1}{\sqrt3},\sqrt3\right]$. Let $k$ be the number among those $1996$ endpoints equal to $\sqrt3$, so $1996-k$ equal $-\frac{1}{\sqrt3}$. Then
+$$
+k\sqrt3+(1996-k)\left(-\frac{1}{\sqrt3}\right)+y=-318\sqrt3.
+$$
+Multiplying by $\sqrt3$ gives
+$$
+3k-(1996-k)+y\sqrt3=-954,
+$$
+so
+$$
+4k-1996+y\sqrt3=-954\Rightarrow y\sqrt3=1042-4k.
+$$
+The bound $-\frac{1}{\sqrt3}\le y\le \sqrt3$ is $-1\le y\sqrt3\le 3$, hence
+$$
+-1\le 1042-4k\le 3\Rightarrow 1039\le 4k\le 1043\Rightarrow k=260,
+$$
+and then $y\sqrt3=2$, so $y=\frac{2\sqrt3}{3}$.
+
+Therefore
+$$
+M=260(\sqrt3)^{12}+1736\left(\frac{1}{\sqrt3}\right)^{12}+\left(\frac{2\sqrt3}{3}\right)^{12}.
+$$
+Since $(\sqrt3)^{12}=3^6$ and $\left(\frac{1}{\sqrt3}\right)^{12}=3^{-6}$ and $\left(\frac{2\sqrt3}{3}\right)^{12}=2^{12}\cdot 3^{-6}$,
+$$
+M=260\cdot 3^6+\frac{1736+2^{12}}{3^6}.
+$$
+With $3^6=729$ and $1736+2^{12}=1736+4096=5832=8\cdot729$,
+$$
+M=260\cdot729+8=189548.
+$$
+Hence $p\equiv M\pmod{1000}$ gives $p=548$.
