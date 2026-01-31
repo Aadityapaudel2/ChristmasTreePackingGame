@@ -73,13 +73,3 @@ The optimizer stores its start layout and snaps back to the best configuration w
 ## Acknowledgments
 
 This studio is inspired by the Santa 2025 Kaggle challenge. While the final submission window closed, we package our tools and data so others can reproduce or extend the effort. This code is released under **CC BY 4.0**; feel free to fork, improve, and share.
-
-## Next steps
-
-1. `git init` inside this folder, commit the files.  
-2. Add documentation / sample configs as needed.  
-3. Push to your new GitHub repo (e.g., `christmas-tree-packing-studio`).  
-4. Publish a short write-up explaining how to use the UI + tools.
-
-Let me know if you want me to draft a sample `README` summary for that repo description or a release note.
->>>>>>> 7d0fc1e (feat: ship Tree Packing Studio v10)
